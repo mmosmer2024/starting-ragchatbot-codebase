@@ -1,4 +1,4 @@
-import anthropic
+from anthropic import AnthropicBedrock
 from typing import List, Optional, Dict, Any
 
 class AIGenerator:
@@ -29,8 +29,11 @@ All responses must be:
 Provide only the direct answer to what was asked.
 """
     
-    def __init__(self, api_key: str, model: str):
-        self.client = anthropic.Anthropic(api_key=api_key)
+    def __init__(self, aws_profile: str, aws_region: str, model: str):
+        self.client = AnthropicBedrock(
+            aws_profile=aws_profile,
+            aws_region=aws_region
+        )
         self.model = model
         
         # Pre-build base API parameters
