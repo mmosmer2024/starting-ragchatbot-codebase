@@ -8,6 +8,8 @@ A RAG (Retrieval-Augmented Generation) chatbot for querying course materials. Us
 
 ## Commands
 
+**Always use `uv` to run the server - do not use pip directly.**
+
 ```bash
 # Install dependencies
 uv sync
